@@ -2,6 +2,13 @@
 /************************
  * DOM HELPER FUNCTIONS *
  ************************/
+/***************************
+ * EVENT HANDLER FUNCTIONS *
+ ***************************/
+/**************************
+ * SET UP EVENT LISTENERS *
+ **************************/
+
 const printValue = function(str){
   const listItem = document.createElement('li');
   const resultArea = document.querySelector('.result');
@@ -20,40 +27,42 @@ const clearResults = function(){
 const handleBiggify = function(){
   const inputBox = document.querySelector('#user-input');
   clearResults()
+printValue(biggify(inputBox.value));
+  };
+const biggifyButton = document.querySelector('.biggify');
+biggifyButton.addEventListener('click', handleBiggify);
 
-const biggifyButton = document.querySelector('.biggify btn btn-primary')
+const handleNasafy = function(){
+  const inputBox = document.querySelector('#user-input');
+  clearResults()
+printValue(nasafy(inputBox.value));
+  };
+const nasafyButton = document.querySelector('.nasafy');
+nasafyButton.addEventListener('click', handleNasafy);
 
-biggifyButton.addEventListener('click', handleBiggify)
+const handleCrazify = function(){
+  const inputBox = document.querySelector('#user-input');
+  clearResults()
+printValue(crazify(inputBox.value));
+  };
+const crazifyButton = document.querySelector('.crazify');
+crazifyButton.addEventListener('click', handleCrazify);
 
-printValue(biggify(inputBox.value))
+const handleReversify = function(){
+  const inputBox = document.querySelector('#user-input');
+  clearResults()
+printValue(reversify(inputBox.value));
+  };
+const reversifyButton = document.querySelector('.reversify');
+reversifyButton.addEventListener('click', handleReversify);
 
-}
-;
-
-handleBiggify()
-
-
-
-
-// const ols = document.querySelectorAll('ol li');
-
-// const lineThrough = function(event){
-//   event.target.style.textDecoration = 'line-through';
-// };
-
-// for (const li of ols){
-//   li.addEventListener('click',lineThrough);
-// }
-
-/***************************
- * EVENT HANDLER FUNCTIONS *
- ***************************/
-
-
-
-/**************************
- * SET UP EVENT LISTENERS *
- **************************/
+const handleTitleify = function(){
+  const inputBox = document.querySelector('#user-input');
+  clearResults()
+printValue(titleify(inputBox.value));
+  };
+const titleifyButton = document.querySelector('.titleify');
+titleifyButton.addEventListener('click', handleTitleify);
 
 
 
