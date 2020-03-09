@@ -18,19 +18,30 @@ const printValue = function(str){
 
 const clearResults = function(){
   const resultArea = document.querySelectorAll('.result li');
-  console.log(resultArea);
   for (const li of resultArea){
     li.remove();
-    console.log(li.remove);
   }
 };
+// Button Function for biggify
 const handleBiggify = function(){
   const inputBox = document.querySelector('#user-input');
   clearResults()
-printValue(biggify(inputBox.value));
+printValue(biggify(Number(inputBox.value)));
   };
+
+//Click addEventListener call handleBiggify Function
 const biggifyButton = document.querySelector('.biggify');
 biggifyButton.addEventListener('click', handleBiggify);
+
+
+//Click clearInputbox
+const clearInputBox = function() {
+  document.querySelector('#user-input').value = '';
+  document.querySelector('#user-input').focus();
+
+};
+
+biggifyButton.addEventListener('click', clearInputBox);
 
 const handleNasafy = function(){
   const inputBox = document.querySelector('#user-input');
@@ -38,7 +49,10 @@ const handleNasafy = function(){
 printValue(nasafy(inputBox.value));
   };
 const nasafyButton = document.querySelector('.nasafy');
+
+
 nasafyButton.addEventListener('click', handleNasafy);
+nasafyButton.addEventListener('click', clearInputBox);
 
 const handleCrazify = function(){
   const inputBox = document.querySelector('#user-input');
@@ -47,6 +61,7 @@ printValue(crazify(inputBox.value));
   };
 const crazifyButton = document.querySelector('.crazify');
 crazifyButton.addEventListener('click', handleCrazify);
+crazifyButton.addEventListener('click', clearInputBox);
 
 const handleReversify = function(){
   const inputBox = document.querySelector('#user-input');
@@ -55,6 +70,8 @@ printValue(reversify(inputBox.value));
   };
 const reversifyButton = document.querySelector('.reversify');
 reversifyButton.addEventListener('click', handleReversify);
+reversifyButton.addEventListener('click', clearInputBox);
+
 
 const handleTitleify = function(){
   const inputBox = document.querySelector('#user-input');
@@ -63,6 +80,6 @@ printValue(titleify(inputBox.value));
   };
 const titleifyButton = document.querySelector('.titleify');
 titleifyButton.addEventListener('click', handleTitleify);
-
+titleifyButton.addEventListener('click', clearInputBox);
 
 
