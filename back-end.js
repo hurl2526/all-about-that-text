@@ -46,6 +46,18 @@ const crazify = function(str) {
   return crazified;
 }
 
+const emailify = function (name) {
+  let answer = '';
+  for (let i = 0; i < name.length; i++){
+    if(name[i] === ' ') {
+      answer = answer + '.';
+    } else {
+      answer = answer + name[i];
+    }
+  }
+  return answer.toLowerCase() + '@codeimmersives.com';
+}
+
 if (typeof module === 'undefined') {
   module = {};
 }
@@ -56,4 +68,5 @@ module.exports = {
   reversify,
   titleify,
   crazify,
+  emailify,
 }
