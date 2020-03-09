@@ -41,6 +41,8 @@ const clearInputBox = function() {
 
 };
 
+clearInputBox();
+
 biggifyButton.addEventListener('click', clearInputBox);
 
 const handleNasafy = function(){
